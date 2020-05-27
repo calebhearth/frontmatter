@@ -1,6 +1,7 @@
 module ActionPage
   class BaseController < ::ApplicationController
     cattr_reader :page_class
+    helper ActionPage::ApplicationHelper
 
     def self.renders_page(page)
       @@page_class = page
@@ -31,7 +32,5 @@ module ActionPage
       end
       render
     end
-
-    helper :application
   end
 end

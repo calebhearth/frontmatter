@@ -14,14 +14,12 @@ module ActionPage
     end
 
     def self.pages_directory
-      Rails.root.join("app", "views", view_key, '*').freeze
+      Rails.root.join("app", "views", view_key, '*.yaml').freeze
     end
 
     def initialize(filename)
       @slug = File.basename(filename.split('.')[0])
-      body = File.read(filename)
-      _, frontmatter, @raw_content = body.split("---\n", 3)
-      @frontmatter = YAML.load(frontmatter).with_indifferent_access
+      @frontmatter = YAML.load(File.read(filename)).with_indifferent_access
     end
 
     # TODO: Define attribute methods to speed this up

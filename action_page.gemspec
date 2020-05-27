@@ -5,7 +5,7 @@ require "action_page/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "actionpage"
+  spec.name        = "action_page"
   spec.version     = ActionPage::VERSION
   spec.authors     = ["Caleb Hearth"]
   spec.email       = ["caleb@calebhearth.com"]
