@@ -35,11 +35,24 @@ end
 
 ### app/controllers/posts_controller.rb
 
+A controller is required, but there is no need to define the default actions.
+Default index and show actions are provided that list all posts (all files in
+app/views/posts with a .yaml or .yml extension) and finds posts based on their
+"slug" which is the filename without any extensions.
+
 ```ruby
 class PostsController < ActionPage::BaseController
-  # default index and show actions are provided that list all posts (all files
-  # in app/views/posts with a .yaml or .yml extension) and finds posts based on
-  # their "slug" which is the filename without any extensions.
+end
+```
+
+The ActionPost::Base subclass is inferred to be the singular of the  Controller's
+class name without "Controller", so `PostsController` would render `Post`
+objects and look for views in `app/views/posts`. The class-level `renders_page`
+method overrides this:
+
+```
+class PostsController < ActionPage::BaseController
+  renders_page :blog_post # BlogPost objects / app/views/blog_posts views.
 end
 ```
 
