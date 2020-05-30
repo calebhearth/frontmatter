@@ -33,6 +33,10 @@ class Post < ActionPost::Base
 end
 ```
 
+`ActionPost::Base` provides class-level "all" and "find(slug)" methods which
+list all pages and finds the first page matching the slug. It also extracts all
+frontmatter and provides it as getter methods such as `post.title`.
+
 ### app/controllers/posts_controller.rb
 
 A controller is required, but there is no need to define the default actions.
