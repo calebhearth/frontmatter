@@ -1,2 +1,2 @@
-class Page < ActionPage::Base
+class Page < Frontmatter::Base
 end

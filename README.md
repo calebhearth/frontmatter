@@ -1,6 +1,6 @@
-# ActionPage
+# Frontmatter
 
-ActionPage provides a Rails template handler for views ending in .yaml or .yml
+Frontmatter provides a Rails template handler for views ending in .yaml or .yml
 which contain "frontmatter" that is valid YAML contained between two sets of
 `---`, such as:
 
@@ -45,7 +45,7 @@ app/views/posts with a .yaml or .yml extension) and finds posts based on their
 "slug" which is the filename without any extensions.
 
 ```ruby
-class PostsController < ActionPage::BaseController
+class PostsController < Frontmatter::BaseController
 end
 ```
 
@@ -55,7 +55,7 @@ objects and look for views in `app/views/posts`. The class-level `renders_page`
 method overrides this:
 
 ```
-class PostsController < ActionPage::BaseController
+class PostsController < Frontmatter::BaseController
   renders_page :blog_post # BlogPost objects / app/views/blog_posts views.
 end
 ```
@@ -71,7 +71,7 @@ resources :posts, only: %i(index show)
 This original Jekyll file would be called `_posts/2020-05-30-my-first-post.md`
 and would not have a date field in the frontmatter. That would need to be
 migrated manually or scripted. Date extraction from filename is not a feature of
-ActionPage.
+Frontmatter.
 
 ```markdown
 
@@ -104,7 +104,7 @@ Look at all the things I'm not doing!
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'action_page'
+gem 'frontmatter'
 ```
 
 And then execute:
@@ -114,5 +114,5 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install action_page
+$ gem install frontmatter
 ```

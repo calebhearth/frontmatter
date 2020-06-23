@@ -1,4 +1,4 @@
-module ActionPage
+module Frontmatter
   class ApplicationMailer < ActionMailer::Base
     default from: 'from@example.com'
     layout 'mailer'

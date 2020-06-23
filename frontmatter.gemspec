@@ -1,12 +1,12 @@
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "action_page/version"
+require "frontmatter/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "action_page"
-  spec.version     = ActionPage::VERSION
+  spec.name        = "frontmatter"
+  spec.version     = Frontmatter::VERSION
   spec.authors     = ["Caleb Hearth"]
   spec.email       = ["caleb@calebhearth.com"]
   spec.homepage    = "https://calebhearth.com"

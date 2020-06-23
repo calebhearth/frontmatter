@@ -1,2 +1,2 @@
-ActionPage::Engine.routes.draw do
+Frontmatter::Engine.routes.draw do
 end

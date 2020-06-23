@@ -1,7 +1,7 @@
-module ActionPage
-  class BaseController < ::ApplicationController
+module Frontmatter
+  class PagesController < ::ApplicationController
     cattr_reader :page_class
-    helper ActionPage::ApplicationHelper
+    helper Frontmatter::ApplicationHelper
 
     def self.renders_page(page)
       @@page_class = page
@@ -12,7 +12,7 @@ module ActionPage
        page_class = name.sub(/Controller\z/, '')
        page_class.singularize.constantize
        rescue NameError
-         raise #ActionPage::MissingPageClass.new(page: page_class)
+         raise #Frontmatter::MissingPageClass.new(page: page_class)
        end
     end
 

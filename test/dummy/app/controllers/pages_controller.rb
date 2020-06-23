@@ -1,2 +1,2 @@
-class PagesController < ActionPage::BaseController
+class PagesController < Frontmatter::BaseController
 end

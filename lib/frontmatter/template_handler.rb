@@ -1,4 +1,4 @@
-module ActionPage
+module Frontmatter
   class TemplateHandler
     def self.call(template, source)
       new(template, source).call

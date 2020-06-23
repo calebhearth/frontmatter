@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  helper ActionPage::ApplicationHelper
+  helper Frontmatter::ApplicationHelper
 end

@@ -1,5 +1,5 @@
-module ActionPage
-  class Base
+module Frontmatter
+  class Page
     extend ActiveModel::Naming
     attr_reader :slug
 
