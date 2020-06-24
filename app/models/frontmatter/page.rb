@@ -18,20 +18,17 @@ module Frontmatter
     end
 
     def initialize(filename)
-      @slug = File.basename(filename.split('.')[0])
+      @slug = File.basename(filename.split('.')[0] )
       @frontmatter = YAML.load(File.read(filename)).with_indifferent_access
     end
 
     # TODO: Define attribute methods to speed this up
     def method_missing(m, *args, &block)
-      if value = @frontmatter[m]
-        return value
-      end
-      super
+      @frontmatter[m] || super
     end
 
-    def respond_to_missing(m)
-      @frontmatter.key(m)
+    def respond_to_missing?(method_name, include_private = false)
+      @frontmatter.key?(method_name) || super
     end
 
     def to_param
