@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version     = Frontmatter::VERSION
   spec.authors     = ["Caleb Hearth"]
   spec.email       = ["caleb@calebhearth.com"]
-  spec.homepage    = "https://calebhearth.com"
+  spec.homepage    = "https://github.com/calebthompson/frontmatter"
   spec.summary     = "Semi-static pages with data in Rails."
   spec.license     = "MIT"
 
