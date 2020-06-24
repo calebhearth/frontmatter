@@ -1,7 +1,7 @@
 module Frontmatter
   class Page
     extend ActiveModel::Naming
-    attr_reader :slug
+    attr_reader :slug, :frontmatter
 
     def self.all
       Dir[pages_directory]
