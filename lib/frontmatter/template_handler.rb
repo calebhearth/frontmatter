@@ -15,7 +15,7 @@ module Frontmatter
 
     def handler_for_template
       ApplicationController.new.view_paths.paths.first
-        .extract_handler_and_format_and_variant(path_without_yaml)
+        .send(:extract_handler_and_format_and_variant, path_without_yaml)
         .first
     end
 
