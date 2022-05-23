@@ -19,7 +19,8 @@ module Frontmatter
 
     def initialize(filename)
       @slug = File.basename(filename.split('.')[0] )
-      @frontmatter = (YAML.load(File.read(filename)) || {}).with_indifferent_access
+      hash = YAML.load(File.read(filename), permitted_classes: ["Date"]) || {}
+      @frontmatter = hash.with_indifferent_access
     end
 
     # TODO: Define attribute methods to speed this up
