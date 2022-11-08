@@ -19,6 +19,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "railties"
   spec.add_dependency "activesupport"
 
-  spec.add_development_dependency "rails"
+  spec.add_development_dependency "activejob"
+  spec.add_development_dependency "activemodel"
+  spec.add_development_dependency "activerecord"
   spec.add_development_dependency "pg"
 end

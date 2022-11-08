@@ -13,10 +13,14 @@ module Frontmatter
       handler_for_template.call(@template, source_without_yaml)
     end
 
+    private
+
     def handler_for_template
-      ApplicationController.new.view_paths.paths.first
-        .send(:extract_handler_and_format_and_variant, path_without_yaml)
-        .first
+      handler = ActionView::Resolver::PathParser.new
+        .parse(path_without_yaml)
+        .details
+        .handler
+      ActionView::Template.handler_for_extension(handler)
     end
 
     def source_without_yaml
