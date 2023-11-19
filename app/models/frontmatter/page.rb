@@ -19,7 +19,7 @@ module Frontmatter
 
     def initialize(filename)
       @slug = File.basename(filename.split('.')[0] )
-      hash = YAML.load(File.read(filename), permitted_classes: ["Date"]) || {}
+      hash = YAML.load(File.read(filename), permitted_classes: ["Date", "Time"]) || {}
       @frontmatter = hash.with_indifferent_access
     end
 
